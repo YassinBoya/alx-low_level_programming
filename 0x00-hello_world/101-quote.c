@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
-/**
-* main - A program that prints a line to the standars error
-* Return always 0 (Success)
+/*
+* main - A programme that prints a line with printf function
+* Return: 0 (success)
 */
 int main(void)
 {
