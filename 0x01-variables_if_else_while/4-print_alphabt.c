@@ -6,6 +6,7 @@
 int main(void)
 {
 	int n = 97;
+	int i;
 	for(i = n ; n <= 122 ; i++)
 	{
 		if(n != 101 && n != 113)
