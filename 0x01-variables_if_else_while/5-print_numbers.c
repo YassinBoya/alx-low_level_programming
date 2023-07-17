@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * main - a program that prints all single digit numbers of base 10 starting from 0
+ * main - a program that prints all single digit numbers of base 10
  * Return: always 0
  */
 int main(void)
@@ -9,7 +9,7 @@ int main(void)
 
 	for (n = 0 ; n <= 9 ; n++)
 	{
-		printf("%d",n);
+		printf("%d", n);
 	}
 	printf("\n");
 	return (0);
