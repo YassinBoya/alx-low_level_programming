@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - a program that checks if the number that rand() gives as output is negative or positive pr zero
+ * main - a program that checks if the number is negative or positive or zero
  * Return : always 0
  */
 int main(void)
@@ -16,7 +16,7 @@ if (n > 0)
 printf("%d is positive\n", n);
 }
 else if (n == 0)
-{     
+{
 printf("%d is zero\n", n);
 }
 else
