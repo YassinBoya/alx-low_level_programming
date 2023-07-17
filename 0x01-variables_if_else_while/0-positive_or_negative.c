@@ -4,7 +4,7 @@
 /**
  * main - a program that checks if the number that rand() gives as output is negative or positive pr zero
  * Return : always 0
- * */
+ */
 int main(void)
 {
 	int n;
@@ -19,7 +19,7 @@ int main(void)
 	{
 		printf("%d is zero\n", n);
 	}
-        else
+	else
 	{ 
 		printf("%d is negative\n", n);
 	}
