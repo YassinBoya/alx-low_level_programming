@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+ * main - a program that checks if the number that rand() gives as output is negative or positive pr zero
+ * Return : always 0
+ * */
 int main(void)
 {
 	int n;
