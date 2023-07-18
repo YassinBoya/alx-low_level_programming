@@ -5,7 +5,7 @@
 */
 int main(void)
 {
-	int alphabet()
+	void print_alphabet(void)
 	{
 		int i;
 		
