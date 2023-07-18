@@ -1,8 +1,6 @@
 #include "main.h"
-
 /**
- * main - prints (_putchar) to stdout
- *
+ * main - prints _putchar to stdout
  * Return: always 0
  */
 void print_alphabet(void)
