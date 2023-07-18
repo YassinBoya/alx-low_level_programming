@@ -1,8 +1,9 @@
 #include "main.h"
+
 /**
- * main - print_alphabet function prints _putchar to stdout
- * Return: always 0
+ * main - chack the code
  *
+ * Return: always 0.
  */
 void print_alphabet(void)
 {
