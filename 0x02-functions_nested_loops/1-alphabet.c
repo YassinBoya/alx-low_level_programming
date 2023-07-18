@@ -1,9 +1,7 @@
 #include "main.h"
-
 /**
- * main - chack the code
- *
- * Return: always 0.
+ * main - a program that prints _putchar
+ * Return: always 0
  */
 void print_alphabet(void)
 {
