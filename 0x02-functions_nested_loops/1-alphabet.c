@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* main - entry point
-* description - prints _putchar to stdout
-* Return: always 0
-*/
+ * main - entry point
+ * description - prints (_putchar) to stdout
+ * Return: always 0
+ */
 void print_alphabet(void)
 {
 	int i;
