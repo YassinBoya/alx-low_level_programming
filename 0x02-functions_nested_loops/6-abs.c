@@ -4,7 +4,7 @@
  * @i: the input number as integer
  * Return: always 0
  */
-int _abs(int)
+int _abs(int i)
 {
 	if (i >= 0)
 	{
