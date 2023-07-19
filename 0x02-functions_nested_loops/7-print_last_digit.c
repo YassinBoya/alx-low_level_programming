@@ -17,4 +17,5 @@ int print_last_digit(int n)
 	{
 		putchar(ld + 48);
 	}
+	putchar('\n');
 }
