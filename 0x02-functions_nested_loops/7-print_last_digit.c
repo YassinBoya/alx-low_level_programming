@@ -12,10 +12,8 @@ int print_last_digit(int n)
 	if (ld < 0)
 	{
 		putchar(-ld + 48);
-			return (ld);
 	}
 	else{
 		putchar(ld + 48);
-		return(ld);
 	}
 }
