@@ -13,7 +13,8 @@ int print_last_digit(int n)
 	{
 		putchar(-ld + 48);
 	}
-	else{
+	else
+	{
 		putchar(ld + 48);
 	}
 }
