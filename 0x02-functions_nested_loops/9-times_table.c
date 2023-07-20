@@ -1,5 +1,8 @@
 #include "main.h"
-
+/**
+ * times_table - a function that prints 9 times table
+ * Return: always 0
+ */
 void times_table(void)
 {
 	int i, j, produt;
