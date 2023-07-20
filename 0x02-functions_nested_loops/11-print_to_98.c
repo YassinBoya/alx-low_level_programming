@@ -20,6 +20,7 @@ void print_to_98(int n)
 			if (i / 100)
 			{
 				_putchar((i / 100) + '0');
+			}
 			if (i / 10)
 			{
 				_putchar(((i % 100) / 10) + '0');
