@@ -4,7 +4,8 @@
  * @n: number integer gived as parametre
  * Return: always 0
  */
-void print_number(int n) {
+void print_number(int n)
+{
     if (n < 0) {
         _putchar('-');
         n = -n;
@@ -16,9 +17,12 @@ void print_number(int n) {
     _putchar((n % 10) + '0');
 }
 
-void print_to_98(int n) {
+void print_to_98(int n)
+{
+	int i;
+
     if (n <= 98) {
-        for (int i = n; i <= 98; i++) {
+        for (i = n; i <= 98; i++) {
             print_number(i);
             if (i != 98) {
                 _putchar(',');
@@ -26,7 +30,7 @@ void print_to_98(int n) {
             }
         }
     } else {
-        for (int i = n; i >= 98; i--) {
+        for (i = n; i >= 98; i--) {
             print_number(i);
             if (i != 98) {
                 _putchar(',');
