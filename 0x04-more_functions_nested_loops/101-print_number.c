@@ -6,18 +6,38 @@
  */
 void print_number(int n)
 {
-	unsigned int num = n;
+	int divisor = 1;
+	int num = n;
+	int is_negative = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		num = -num;
+		num = -n;
+		is_negative = 1;
 	}
 
-	if ((n / 10) > 0)
+	while (n / divisor >= 10)
 	{
-		print_number(num / 10);
+		divisor *= 10;
 	}
 
-	_putchar((num % 10) + '0');
+	while (divisor > 0)
+	{
+		int digit = num / divisor;
+
+		_putchar(digit + '0');
+		num %= divisor;
+		divisor /= 10;
+	}
+
+	if (is_negative)
+	{
+		_putchar('0' + (n % 10) * -1);
+	}
+	else
+	{
+		_putchar('0' + n % 10);
+	}
 }
+
