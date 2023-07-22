@@ -3,31 +3,29 @@
  * main - a program that finds and prints the largest prime factor of number
  * Return: always 0
  */
-
 int main(void)
 {
-	long i = 3, PFactor, number = 612852475143;
+	long PFactor, number = 612852475143;
 
-	PFactor = number;
-	while (PFactor % 2 == 0)
+	while (number % 2 == 0)
 	{
-		PFactor /= 2;
+		number /= 2;
 	}
 
-	while (i <= PFactor)
+	PFactor = 3;
+	while (PFactor * PFactor <= number)
 	{
-		if (PFactor % i == 0)
+		if (number % PFactor == 0)
 		{
-			PFactor = PFactor / i;
+			number = number / PFactor;
 		}
 		else
 		{
-			i += 2;
+			PFactor += 2;
 		}
 	}
 
-	printf("%ld\n", PFactor);
+	printf("%ld\n", number);
 
 	return (0);
 }
-
