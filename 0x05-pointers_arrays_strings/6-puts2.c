@@ -9,10 +9,9 @@ void puts2(char *str)
 	int i = 0;
 	int length = 0;
 
-	while (*str != '\0')
+	while (str[length] != '\0')
 	{
 		length++;
-		str++;
 	}
 			while (i < length)
 			{
@@ -21,4 +20,3 @@ void puts2(char *str)
 			}
 	putchar('\n');
 }
-
