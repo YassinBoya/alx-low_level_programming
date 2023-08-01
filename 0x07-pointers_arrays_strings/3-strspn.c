@@ -8,13 +8,23 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int n = 0;
+	int b;
+	const char *ptrS = s;
+	const char *ptrAcc = accept;
 
-	while (*s != '\0' && *accept != '\0')
+	while (*ptrS)
 	{
-		if (*s == *accept)
-			n++;
-		s++;
-		accept++;
+		for (b = 0; ptrAcc[b]; b++)
+		{
+			if (ptrAcc[b] == *ptrS)
+			{
+				n++;
+				break;
+			}
+			else if (ptrAcc[b + 1] == '\0')
+				return(n);
+		}
+		ptrS++;
 	}
 	return (n);
 }
