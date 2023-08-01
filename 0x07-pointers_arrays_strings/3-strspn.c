@@ -22,7 +22,7 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 			else if (ptrAcc[b + 1] == '\0')
-				return(n);
+				return (n);
 		}
 		ptrS++;
 	}
