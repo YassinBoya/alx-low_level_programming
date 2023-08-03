@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - a function that returns the square root a number.
  * find_sqrt - Helper function to find the square root recursively
  * @n: The number for which the square root is to be found
  * @start: The starting value for searching the square root
@@ -20,6 +19,11 @@ int find_sqrt(int n, int start)
 	}
 	return (find_sqrt(n, start + 1));
 }
+/**
+ * _sqrt_recursion - computes the square root of n
+ * @n: the number to compute the square root of
+ * Return: return the square root of n, -1 otherwise.
+ */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
