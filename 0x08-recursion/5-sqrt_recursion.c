@@ -2,6 +2,7 @@
 
 /**
  * find_sqrt - Helper function to find the square root recursively
+ * _sqrt_recursion - a function that returns the natural square root of a number
  * @n: The number for which the square root is to be found
  * @start: The starting value for searching the square root
  *
