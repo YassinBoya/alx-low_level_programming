@@ -10,11 +10,11 @@
  */
 int find_sqrt(int n, int start)
 {
-	if (start > n)
+	if (start * start > n)
 	{
 		return (-1);
 	}
-	if (start == n)
+	if (start * start == n)
 	{
 		return (start);
 	}
