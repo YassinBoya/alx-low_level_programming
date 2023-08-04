@@ -8,20 +8,22 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, sum = 0;
+    int i = 1, sum = 0;
 
-	while (i < argc)
-	{
-		if (*argv[i] < '0' || *argv[i] > '9')
-		{
-			return (printf("Error\n"), 1);
-		}
-		else
-		{
-			sum += atoi(argv[i]);
-			i++;
-		}
-	}
-	printf("%d\n", sum);
-	return (0);
+    while (i < argc)
+    {
+        if (*argv[i] >= '0' && *argv[i] <= '9')
+        {
+            sum += atoi(argv[i]);
+            i++;
+        }
+        else
+        {
+            fprintf(stderr, "Error: Invalid argument: %s\n", argv[i]);
+            return 1;
+        }
+    }
+
+    printf("%d\n", sum);
+    return 0;
 }
