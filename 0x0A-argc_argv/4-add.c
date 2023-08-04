@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int i = 1, sum = 0;
 
-	while (i < argc)
+	while (--argc)
 	{
 		if (*argv[i] >= '0' && *argv[i] <= '9')
 		{
