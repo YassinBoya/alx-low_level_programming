@@ -1,11 +1,11 @@
 #include <stdio.h>
 /**
  * main - the entry point
- * @argc: the length of arguments in argv
- * @argv: an array of arguments
+ * @argc: the number of the commandline arguments
+ * @argv: a pointer to an array of command lines arguments
  * Return: always 0
  */
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	(void)argc;
 	printf("%s\n", argv[0]);
