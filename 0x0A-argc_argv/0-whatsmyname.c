@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * main - the entry point
  * @argc: the length of arguments in argv
@@ -7,6 +8,6 @@
  */
 int main(int argc, char *argv[])
 {
-	putchar("%s\n", argv[argc - argc]);
+	printf("%s\n", argv[argc - argc]);
 	return (0);
 }
