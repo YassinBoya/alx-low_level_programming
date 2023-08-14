@@ -5,7 +5,8 @@
 /**
  * _strcpy - Duplicates a string.
  * @str: Source string.
- * Return: Pointer to the duplicated string, or NULL if memory allocation fails.
+ * Return: Pointer to the duplicated string
+ * , or NULL if memory allocation fails.
  */
 char *_strcpy(char *str)
 {
@@ -18,7 +19,7 @@ char *_strcpy(char *str)
 	while (str[length])
 		length++;
 
-	copy= malloc(sizeof(char) * (length + 1));
+	copy = malloc(sizeof(char) * (length + 1));
 	if (copy == NULL)
 		return (NULL);
 
