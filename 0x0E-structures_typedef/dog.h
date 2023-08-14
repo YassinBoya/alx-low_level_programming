@@ -6,7 +6,7 @@
  * @age: the second member
  * @owner: the third member
  */
- 
+
 struct dog
 {
 	char *name;
