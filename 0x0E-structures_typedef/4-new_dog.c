@@ -18,6 +18,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* Allocate memory for the new dog_t structure */
 	new_dog_ptr = malloc(sizeof(dog_t));
+	if (!name || age <0 || !owner)
+		return (NULL);
 	if (new_dog_ptr == NULL)
 		return (NULL);
 
