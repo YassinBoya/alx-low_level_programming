@@ -1,10 +1,13 @@
-#include <stdio.h>
+#ifndef DOG_H
+#define DOG_H
 
 /**
- * dog - a structur that holds the name and the age and the owen of a dog
+ * struct dog - a structur that holds the name and the age and the owen of a dog
  * @name: the first member
  * @age: the second member
  * @owner: the third member
+ *
+ * Description: just a long dog struct in a big kitty world
  */
 
 struct dog
@@ -13,3 +16,4 @@ struct dog
 	float age;
 	char *owner;
 };
+#endif
