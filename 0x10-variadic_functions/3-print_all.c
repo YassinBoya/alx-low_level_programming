@@ -60,9 +60,7 @@ void print_all(const char * const format, ...)
 
 	while (format && *fmt)
 	{
-		char current_format = *fmt;
-
-		switch (current_format)
+		switch (*fmt)
 		{
 			case 'c':
 				print_char(separator, args);
