@@ -1,15 +1,14 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-
 /**
  * print_char - A function that handles printing a character argument.
  * @separator: The separator to be printed before the character.
  * @args: The list of arguments.
  */
-void print_char(char separator, va_list args)
+void print_char(char *separator, va_list args)
 {
-	printf("%c%c", separator, va_arg(args, int));
+	printf("%s%c", separator, va_arg(args, int));
 }
 
 /**
@@ -17,9 +16,9 @@ void print_char(char separator, va_list args)
  * @separator: The separator to be printed before the integer.
  * @args: The list of arguments.
  */
-void print_int(char separator, va_list args)
+void print_int(char *separator, va_list args)
 {
-	printf("%c%d", separator, va_arg(args, int));
+	printf("%s%d", separator, va_arg(args, int));
 }
 
 /**
@@ -27,9 +26,9 @@ void print_int(char separator, va_list args)
  * @separator: The separator to be printed before the float.
  * @args: The list of arguments.
  */
-void print_float(char separator, va_list args)
+void print_float(char *separator, va_list args)
 {
-	printf("%c%f", separator, va_arg(args, double));
+	printf("%s%f", separator, va_arg(args, double));
 }
 
 /**
@@ -37,13 +36,13 @@ void print_float(char separator, va_list args)
  * @separator: The separator to be printed before the string.
  * @args: The list of arguments.
  */
-void print_string(char separator, va_list args)
+void print_string(char *separator, va_list args)
 {
 	char *s_arg = va_arg(args, char *);
 
 	if (s_arg == NULL)
 		s_arg = "(nil)";
-	printf("%c%s", separator, s_arg);
+	printf("%s%s", separator, s_arg);
 }
 
 /**
@@ -65,16 +64,16 @@ void print_all(const char * const format, ...)
 		switch (current_format)
 		{
 			case 'c':
-				print_char(*separator, args);
+				print_char(separator, args);
 				break;
 			case 'i':
-				print_int(*separator, args);
+				print_int(separator, args);
 				break;
 			case 'f':
-				print_float(*separator, args);
+				print_float(separator, args);
 				break;
 			case 's':
-				print_string(*separator, args);
+				print_string(separator, args);
 				break;
 			default:
 				break;
@@ -88,4 +87,3 @@ void print_all(const char * const format, ...)
 
 	printf("\n");
 }
-
