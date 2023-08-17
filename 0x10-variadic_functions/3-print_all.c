@@ -57,9 +57,6 @@ void print_all(const char * const format, ...)
 	{
 		char current_format = *fmt;
 
-		if (*(fmt + 1) != '\0')
-			separator = ", ";
-
 		switch (current_format)
 		{
 			case 'c':
@@ -77,7 +74,7 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-
+		separator = ", ";
 		fmt++;
 	}
 
