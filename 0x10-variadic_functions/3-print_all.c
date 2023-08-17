@@ -53,14 +53,15 @@ void print_string(char *separator, va_list args)
 void print_all(const char * const format, ...)
 {
 	va_list args;
+	int i = 0;
 	char *separator = "";
 	const char *fmt = format;
 
 	va_start(args, format);
 
-	while (format && *fmt)
+	while (format && fmt[i])
 	{
-		switch (*fmt)
+		switch (fmt[i])
 		{
 			case 'c':
 				print_char(separator, args);
@@ -79,7 +80,7 @@ void print_all(const char * const format, ...)
 		}
 
 		separator = ", ";
-		fmt++;
+		i++;
 	}
 	printf("\n");
 	va_end(args);
