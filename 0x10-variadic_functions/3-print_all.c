@@ -40,7 +40,8 @@ void print_string(char *separator, va_list args)
 {
 	char *s_arg = va_arg(args, char *);
 
-	if (s_arg == NULL)
+	switch ((int)(!s_arg))
+	case 1:
 		s_arg = "(nil)";
 	printf("%s%s", separator, s_arg);
 }
