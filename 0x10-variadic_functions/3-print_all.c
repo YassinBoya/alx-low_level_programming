@@ -57,7 +57,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (*fmt)
+	while (format && *fmt)
 	{
 		char current_format = *fmt;
 
