@@ -1,37 +1,41 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
+
 /**
- * print_char - a function handles printing a character argument
- * @separator: the separator to be printed before the character
- * @args: the list of arguments
+ * print_char - A function that handles printing a character argument.
+ * @separator: The separator to be printed before the character.
+ * @args: The list of arguments.
  */
 void print_char(char separator, va_list args)
 {
 	printf("%c%c", separator, va_arg(args, int));
 }
+
 /**
- * print_int - a function handles printing an integer argument
- * @separator: the separator to be printed before the character
- * @args: the list of arguments
+ * print_int - A function that handles printing an integer argument.
+ * @separator: The separator to be printed before the integer.
+ * @args: The list of arguments.
  */
 void print_int(char separator, va_list args)
 {
 	printf("%c%d", separator, va_arg(args, int));
 }
+
 /**
- * print_float - a function handles printing a float argument
- * @separator: the separator to be printed before the character
- * @args: the list of arguments
+ * print_float - A function that handles printing a float argument.
+ * @separator: The separator to be printed before the float.
+ * @args: The list of arguments.
  */
 void print_float(char separator, va_list args)
 {
 	printf("%c%f", separator, va_arg(args, double));
 }
+
 /**
- * print_string - afunction handles printing a string argument
- * @separator: the separator to be printed before the character
- * @args: the list of arguments
+ * print_string - A function that handles printing a string argument.
+ * @separator: The separator to be printed before the string.
+ * @args: The list of arguments.
  */
 void print_string(char separator, va_list args)
 {
@@ -41,9 +45,10 @@ void print_string(char separator, va_list args)
 		s_arg = "(nil)";
 	printf("%c%s", separator, s_arg);
 }
+
 /**
- * print_all - a function that prints any type of variables
- *@format: the format string specifying the types of arguments
+ * print_all - A function that prints any type of variables.
+ * @format: The format string specifying the types of arguments.
  */
 void print_all(const char * const format, ...)
 {
@@ -74,10 +79,13 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
+
 		separator = ", ";
 		fmt++;
 	}
 
 	va_end(args);
+
 	printf("\n");
 }
+
