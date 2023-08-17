@@ -66,7 +66,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (fmt[i])
+	while (format && fmt[i])
 	{
 		switch (fmt[i])
 		{
@@ -92,4 +92,3 @@ void print_all(const char * const format, ...)
 	printf("\n");
 	va_end(args);
 }
-
