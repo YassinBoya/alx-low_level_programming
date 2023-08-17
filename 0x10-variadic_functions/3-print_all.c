@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
+
 /**
  * print_char - A function that handles printing a character argument.
  * @separator: The separator to be printed before the character.
@@ -48,6 +49,7 @@ void print_string(char *separator, va_list args)
 		default:
 			break;
 	}
+
 	printf("%s%s", separator, s_arg);
 }
 
@@ -64,7 +66,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (format && fmt[i])
+	while (fmt[i])
 	{
 		switch (fmt[i])
 		{
@@ -90,3 +92,4 @@ void print_all(const char * const format, ...)
 	printf("\n");
 	va_end(args);
 }
+
