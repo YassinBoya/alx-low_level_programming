@@ -2,10 +2,11 @@
 #define LISTS_H
 #include <stddef.h>
 
-typedef struct Node_s {
-    char *str;
-    int len;
-    struct Node_s *next;
+typedef struct Node_s
+{
+	char *str;
+	int len;
+	struct Node_s *next;
 } list_t;
 
 int _putchar(char c);
