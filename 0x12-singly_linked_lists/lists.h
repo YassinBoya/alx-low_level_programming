@@ -2,6 +2,12 @@
 #define LISTS_H
 #include <stddef.h>
 
+/**
+ * struct Node_s - a structur for a node of list.
+ * @str: atr as a string.
+ * @len: atr as len of string.
+ * @next: a pointer to structr of type Node_s.
+ */
 typedef struct Node_s
 {
 	char *str;
