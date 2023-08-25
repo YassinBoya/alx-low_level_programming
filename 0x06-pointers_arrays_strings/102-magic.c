@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - a function that that the program prints a[2] = 98
+ * main - a function that the program prints a[2] = 98
  * Return: 0
  */
 int main(void)
