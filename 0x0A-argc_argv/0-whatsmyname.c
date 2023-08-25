@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * main - Entry point
  * Description: prints the program name.
@@ -8,7 +7,6 @@
  * @argv: the array of arguments.
  * Return: always 0.
  */
-
 int main(int argc, char const *argv[])
 {
 	printf("%s\n", argv[argc - 1]);
