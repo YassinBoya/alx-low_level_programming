@@ -1,94 +1,72 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-
 /**
- * print_char - A function that handles printing a character argument.
- * @separator: The separator to be printed before the character.
- * @args: The list of arguments.
+ * selector - select and print
+ * @x: char
+ * @args: va_list
+ * Return: empty
  */
-void print_char(char *separator, va_list args)
+int selector(char x, va_list args)
 {
-	printf("%s%c", separator, va_arg(args, int));
-}
+	char *d;
 
-/**
- * print_int - A function that handles printing an integer argument.
- * @separator: The separator to be printed before the integer.
- * @args: The list of arguments.
- */
-void print_int(char *separator, va_list args)
-{
-	printf("%s%d", separator, va_arg(args, int));
-}
-
-/**
- * print_float - A function that handles printing a float argument.
- * @separator: The separator to be printed before the float.
- * @args: The list of arguments.
- */
-void print_float(char *separator, va_list args)
-{
-	printf("%s%f", separator, va_arg(args, double));
-}
-
-/**
- * print_string - A function that handles printing a string argument.
- * @separator: The separator to be printed before the string.
- * @args: The list of arguments.
- */
-void print_string(char *separator, va_list args)
-{
-	char *s_arg = va_arg(args, char *);
-
-	switch ((int)(!s_arg))
+	switch (x)
 	{
-		case 1:
-			s_arg = "(nil)";
-			break;
-		default:
-			break;
+		case 'c':
+			printf("%c", va_arg(args, int));
+			return (0);
+		case 'i':
+			printf("%d", va_arg(args, int));
+			return (0);
+		case 'f':
+			printf("%f", va_arg(args, double));
+			return (0);
+		case 's':
+			d = va_arg(args, char *);
+			if (d == NULL)
+				d = "(nil)";
+			printf("%s", d);
+
+			return (0);
+
 	}
+	return (1);
 
-	printf("%s%s", separator, s_arg);
 }
-
 /**
- * print_all - A function that prints any type of variables.
- * @format: The format string specifying the types of arguments.
+ *print_all - print all
+ *@format: const
+ *Return: empty
  */
 void print_all(const char * const format, ...)
 {
+	int a;
+	int b;
+	int select = 0;
 	va_list args;
-	int i = 0;
-	const char *fmt = format;
-	char *separator = "";
 
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(args, format);
 
-	while (format && fmt[i])
+	a = 0;
+	while (format[a] != '\0')
 	{
-		switch (fmt[i])
+		select = selector(format[a], args);
+		b = 0;
+		while (format[a + 1] != '\0' && b != 1 && select == 0)
 		{
-			case 'c':
-				print_char(separator, args);
-				break;
-			case 'i':
-				print_int(separator, args);
-				break;
-			case 'f':
-				print_float(separator, args);
-				break;
-			case 's':
-				print_string(separator, args);
-				break;
-			default:
-				break;
+			printf(", ");
+			b = 1;
 		}
+		a++;
 
-		separator = ", ";
-		i++;
 	}
+
 	printf("\n");
-	va_end(args);
+
 }
