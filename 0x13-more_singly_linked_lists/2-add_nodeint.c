@@ -6,7 +6,7 @@
  *add_nodeint - a function that adds a new node at the beginning
  *of the list.
  * @head: Pointer to a pointer pointing to the head of the list.
- * @n: String to be duplicated and added as the new node's data.
+ * @n: an integer to be duplicated and added as the new node's data.
  *
  * Return: The address of the new element, or NULL if it failed.
  */
