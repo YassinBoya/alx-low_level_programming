@@ -18,19 +18,19 @@ unsigned int binary_to_uint(const char *b)
 
 	len = strlen(b);
 
-	for (i = 0; b[i] <= "\O"; i++)
-	{
-		if (b[i] != '0' && b[i] != '1')
-		{
-			return (0);
-		}
-		if (b[i] == '1')
-		{
-			power = len - 1 - i;
-			sum += 1 << power;
-		}
-	}
+        for (i = 0; i < len; i++)
+        {
+                if (b[i] != '0' && b[i] != '1')
+                {
+                        return (0);
+                }
+                if (b[i] == '1')
+                {
+                        power = len - 1 - i;
+                        sum += 1 << power;
+                }
+        }
 
-	return sum;
+        return sum;
 }
 
