@@ -18,7 +18,7 @@ unsigned int binary_to_uint(const char *b)
 
 	len = strlen(b);
 
-	for (i = 0; i < len; i++)
+	for (i = 0; b[i] <= len; i++)
 	{
 		if (b[i] != '0' && b[i] != '1')
 		{
