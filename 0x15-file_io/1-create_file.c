@@ -8,9 +8,9 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int opFile, wrFile, closeFile,i;
+	int opFile, wrFile, closeFile, i;
 
-	if (filename == NULL)
+	if (filename == NULL)i
 		return (-1);
 	opFile = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
 	if (opFile == -1)
@@ -29,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 	if (wrFile == -1)
 		return (-1);
 	closeFile = close(opFile);
-	if (closeFie == -1)
+	if (closeFile == -1)
 		return (-1);
 	return (1);
 }
