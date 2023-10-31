@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  * create_file - creates a file.
+ * create_file - creates a file.
  *@filename: file created
  *@text_content: written to file.
  *
@@ -8,12 +8,12 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int opFile, wrFile, closeFile, i;
+	int opened, wrote, i, closing;
 
-	if (filename == NULL)i
+	if (filename == NULL)
 		return (-1);
-	opFile = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
-	if (opFile == -1)
+	opened = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
+	if (opened == -1)
 		return (-1);
 	if (text_content == NULL)
 	{
@@ -25,11 +25,11 @@ int create_file(const char *filename, char *text_content)
 		while (text_content[i] != '\0')
 			i++;
 	}
-	wrFile = write(opFile, text_content, i);
-	if (wrFile == -1)
+	wrote = write(opened, text_content, i);
+	if (wrote == -1)
 		return (-1);
-	closeFile = close(opFile);
-	if (closeFile == -1)
+	closing = close(opened);
+	if (closing == -1)
 		return (-1);
 	return (1);
 }
