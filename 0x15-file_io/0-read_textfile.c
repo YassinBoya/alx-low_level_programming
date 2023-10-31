@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdlib.h>
+#include <fcntl.h>
+#define READ_BUF_SIZE 1024
 /**
  *read_textfile - a function that reads a text file and
  *prints it to the POSIX standard output
