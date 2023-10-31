@@ -8,12 +8,12 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int opened, wrote, i, closing;
+	int fd, i;
 
 	if (filename == NULL)
 		return (-1);
-	opened = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
-	if (opened == -1)
+	fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
+	if (op == -1)
 		return (-1);
 	if (text_content == NULL)
 	{
@@ -25,11 +25,9 @@ int create_file(const char *filename, char *text_content)
 		while (text_content[i] != '\0')
 			i++;
 	}
-	wrote = write(opened, text_content, i);
-	if (wrote == -1)
+	if (write(fd, text_content, i) == -1)
 		return (-1);
-	closing = close(opened);
-	if (closing == -1)
+	if (close(fd) == -1)
 		return (-1);
 	return (1);
 }
