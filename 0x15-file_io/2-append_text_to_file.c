@@ -7,18 +7,21 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, len = 0;
+	int fd, wrote, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 	if (text_content)
 	{
-		while (text_content[len] != '\0';)
+		while (text_content[len])
 			len++;
 	}
-	fd = open(filename, O_WRONLY | O_APPEN);
-	if (fd == -1 || write(fd, text_content, len) == -1)
+	fd = open(filename, O_WRONLY | O_APPEND);
+	wrote = write(fd, text_content, len);
+
+	if (fd == -1 || wrote == -1)
 		return (-1);
-	close(fd);
+
+	close(opened);
 	return (1);
 }
