@@ -22,7 +22,6 @@ return (NULL);
 temp->n = n;
 temp->prev = NULL;
 temp->next = NULL;
-
 if (idx == 0)
 {
 temp->next = *h;
@@ -37,7 +36,6 @@ for (i = 0; i < idx - 1 && current != NULL; i++)
 {
 current = current->next;
 }
-
 if (i != idx - 1 || current == NULL)
 {
 free(temp);
@@ -46,11 +44,9 @@ return (NULL);
 
 temp->prev = current;
 temp->next = current->next;
-
 if (current->next != NULL)
 current->next->prev = temp;
 
 current->next = temp;
-
-    return (temp);
+return (temp);
 }
