@@ -21,7 +21,13 @@ temp->n = n;
 temp->next = NULL;
 
 if (idx == 0)
-add_dnodeint(&current, n);
+{
+temp->next = *h;
+if (current != NULL)
+current->prev = temp;
+current = temp;
+return (temp);
+}
 
 if (current == NULL || temp == NULL)
 return (NULL);
