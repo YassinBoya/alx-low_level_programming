@@ -24,6 +24,7 @@ temp_list->next = NULL;
 if (*head  != NULL)
 {
 temp_list->next = *head;
+(*head)->prev = temp_list;
 }
 (*head) = temp_list;
 
