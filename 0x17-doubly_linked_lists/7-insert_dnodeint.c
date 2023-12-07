@@ -7,41 +7,50 @@
  * @n: value for the new node
  * Return: pointer to the new node, or NULL if the operation fails
  */
-
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-dlistint_t *temp = malloc(sizeof(dlistint_t));
-dlistint_t *current;
-unsigned int i = 0;
+dlistint_t *temp, *current;
+unsigned int i;
 
-current = *h;
+if (h == NULL)
+return (NULL);
 
-temp->prev = NULL;
+temp = malloc(sizeof(dlistint_t));
+if (temp == NULL)
+return (NULL);
+
 temp->n = n;
+temp->prev = NULL;
 temp->next = NULL;
 
 if (idx == 0)
 {
 temp->next = *h;
-if (current != NULL)
-current->prev = temp;
-current = temp;
+if (*h != NULL)
+(*h)->prev = temp;
+*h = temp;
 return (temp);
 }
 
-if (current == NULL || temp == NULL)
-return (NULL);
-
-while (i < idx - 1 && current != NULL)
+current = *h;
+for (i = 0; i < idx - 1 && current != NULL; i++)
 {
 current = current->next;
-i++;
+}
+
+if (i != idx - 1 || current == NULL)
+{
+free(temp);
+return (NULL);
 }
 
 temp->prev = current;
 temp->next = current->next;
-current->next = temp;
+
+if (current->next != NULL)
 current->next->prev = temp;
 
-return (temp);
+current->next = temp;
+
+    return (temp);
 }
