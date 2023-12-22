@@ -9,13 +9,13 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-unsigned int i;
+unsigned long int i;
 hash_table_t *table = malloc(sizeof(hash_table_t));
 
 if (table != NULL)
 {
-table->array = malloc(sizeof(hash_node_t *) * size);
 table->size = size;
+table->array = malloc(sizeof(hash_node_t *) * size);
 if (table->array != NULL)
 {
 for (i = 0; i < size; i++)
